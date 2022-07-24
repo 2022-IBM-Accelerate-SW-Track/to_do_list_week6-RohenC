@@ -47,13 +47,14 @@ class Home extends Component {
     };
 
     Axios({
-      method: "POST",
-      url: "http://localhost:8080/add/item",
-      data: {jsonObject},
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }).then(res => {
+        method: "POST",
+        url: "http://localhost:8080/add/item",
+        data: {jsonObject},
+        headers: {
+          "Content-Type": "application/json"
+        },
+        withCredentials: true
+      }).then(res => {
         console.log(res.data.message);
     });
 
